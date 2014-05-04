@@ -9,7 +9,7 @@ $(function(){
 	var $start = $('#start').show();
 	var $gameover = $('#gameover').hide();
 	var lastTreePos;
-	var birdFall = false;
+	var birdFall = true; // I am testing this!
 	var passby = 0;
 	var best = window.localStorage.best || 0;
 	var gameOverMark = false;
@@ -102,11 +102,11 @@ $(function(){
 			var y = now_y + Math.pow( ( bird_t + q ) ,2) - 100;
 			var _css = y+'px';
 			if ( 
-				// y < 0      //太高了
-				// ||
-				y > _h  //掉底下
+				
+				
+				y > _h  
 				||
-				!checkBirdPosition(y)  // 撞树
+				!checkBirdPosition(y)  
 				){
 				gameOver();
 				return;
